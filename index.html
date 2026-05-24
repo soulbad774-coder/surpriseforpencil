@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Ishrat ✏️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0f0f14;
+overflow-x:hidden;
+color:white;
+}
+
+/* Background */
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top left,#ff4d8d33,transparent 30%),
+radial-gradient(circle at bottom right,#7d5fff33,transparent 30%),
+#0f0f14;
+z-index:-2;
+}
+
+/* Floating Stars */
+
+.stars span{
+position:absolute;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+animation:float 8s linear infinite;
+opacity:.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+position:relative;
+}
+
+.hero h1{
+font-size:4rem;
+font-family:'Pacifico',cursive;
+color:#ff77aa;
+text-shadow:0 0 20px #ff77aa;
+animation:glow 2s infinite alternate;
+}
+
+.hero h2{
+margin-top:15px;
+font-size:1.5rem;
+color:#ffd369;
+font-weight:400;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px #ff77aa;
+}
+to{
+text-shadow:0 0 30px #ff77aa;
+}
+}
+
+.typing{
+margin-top:25px;
+color:#ffffff;
+border-right:3px solid white;
+white-space:nowrap;
+overflow:hidden;
+width:0;
+animation:typing 5s steps(40,end) forwards;
+}
+
+@keyframes typing{
+from{width:0}
+to{width:100%}
+}
+
+.hero button{
+margin-top:40px;
+padding:15px 35px;
+border:none;
+border-radius:40px;
+background:linear-gradient(45deg,#ff4d8d,#7d5fff);
+color:white;
+font-size:1rem;
+cursor:pointer;
+transition:.4s;
+box-shadow:0 0 20px #ff4d8d55;
+}
+
+.hero button:hover{
+transform:scale(1.1);
+}
+
+/* Countdown */
+
+.countdown{
+margin-top:35px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.time-box{
+background:rgba(255,255,255,0.08);
+padding:20px;
+border-radius:20px;
+min-width:90px;
+backdrop-filter:blur(10px);
+}
+
+.time-box h3{
+font-size:2rem;
+color:#ff77aa;
+}
+
+/* Sections */
+
+section{
+padding:100px 10%;
+}
+
+.title{
+font-size:2.5rem;
+margin-bottom:50px;
+text-align:center;
+color:#ff77aa;
+}
+
+/* Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:25px;
+transition:.4s;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px #ff77aa55;
+}
+
+.card h3{
+margin-bottom:15px;
+font-size:1.3rem;
+}
+
+/* Timeline */
+
+.timeline{
+position:relative;
+max-width:700px;
+margin:auto;
+}
+
+.timeline::after{
+content:'';
+position:absolute;
+width:4px;
+background:#ff77aa;
+top:0;
+bottom:0;
+left:50%;
+margin-left:-2px;
+}
+
+.container{
+padding:20px 40px;
+position:relative;
+width:50%;
+}
+
+.container.left{
+left:0;
+}
+
+.container.right{
+left:50%;
+}
+
+.content{
+padding:20px;
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+}
+
+.container::after{
+content:'✏️';
+position:absolute;
+width:30px;
+height:30px;
+right:-15px;
+background:#ff77aa;
+top:20px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.right::after{
+left:-15px;
+}
+
+/* Cake */
+
+.cake-box{
+text-align:center;
+}
+
+.cake{
+font-size:7rem;
+cursor:pointer;
+transition:.5s;
+}
+
+.cake:hover{
+transform:scale(1.1);
+}
+
+/* Secret Message */
+
+.secret{
+text-align:center;
+}
+
+.secret button{
+padding:15px 30px;
+border:none;
+border-radius:30px;
+background:#ff77aa;
+color:white;
+cursor:pointer;
+font-size:1rem;
+}
+
+.hidden-message{
+margin-top:30px;
+display:none;
+font-size:1.2rem;
+line-height:2;
+background:rgba(255,255,255,0.08);
+padding:30px;
+border-radius:20px;
+}
+
+/* Final */
+
+.final{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+}
+
+.final h1{
+font-size:4rem;
+font-family:'Pacifico',cursive;
+color:#ffd369;
+}
+
+.final p{
+margin-top:20px;
+font-size:1.3rem;
+max-width:700px;
+line-height:2;
+}
+
+/* Creator */
+
+.creator{
+margin-top:40px;
+font-size:1rem;
+letter-spacing:2px;
+color:#ffb6d9;
+opacity:0.8;
+text-align:center;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{
+opacity:0.5;
+}
+50%{
+opacity:1;
+}
+100%{
+opacity:0.5;
+}
+}
+
+/* Music Button */
+
+.music-btn{
+position:fixed;
+top:20px;
+right:20px;
+background:#ff77aa;
+border:none;
+width:55px;
+height:55px;
+border-radius:50%;
+color:white;
+font-size:1.3rem;
+cursor:pointer;
+z-index:999;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.7rem;
+}
+
+.hero h2{
+font-size:1.2rem;
+}
+
+.typing{
+font-size:0.9rem;
+}
+
+.timeline::after{
+left:20px;
+}
+
+.container{
+width:100%;
+padding-left:70px;
+padding-right:20px;
+}
+
+.container.right{
+left:0;
+}
+
+.container.left::after,
+.container.right::after{
+left:5px;
+}
+
+.final h1{
+font-size:2.5rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="stars" id="stars"></div>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8f30c8e8d.mp3?filename=beautiful-piano-ambient-110997.mp3">
+</audio>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Happy Birthday Ishrat ✏️</h1>
+
+<h2>26 May ✨</h2>
+
+<p class="typing">
+Celebrating the beautiful soul born on 26 May 💖
+</p>
+
+<div class="countdown">
+
+<div class="time-box">
+<h3 id="days">00</h3>
+<p>Days</p>
+</div>
+
+<div class="time-box">
+<h3 id="hours">00</h3>
+<p>Hours</p>
+</div>
+
+<div class="time-box">
+<h3 id="minutes">00</h3>
+<p>Minutes</p>
+</div>
+
+<div class="time-box">
+<h3 id="seconds">00</h3>
+<p>Seconds</p>
+</div>
+
+</div>
+
+<button onclick="scrollToNext()">
+Open Your Surprise 💖
+</button>
+
+</section>
+
+<!-- REASONS -->
+
+<section>
+
+<h2 class="title">
+Why You're Special ✨
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Your Smile 🙂</h3>
+<p>
+Your smile can make even the darkest day feel beautiful.
+</p>
+</div>
+
+<div class="card">
+<h3>Your Kindness 💖</h3>
+<p>
+You care about people in the purest way possible.
+</p>
+</div>
+
+<div class="card">
+<h3>Your Personality ✨</h3>
+<p>
+You're unique in a way no one else can ever be.
+</p>
+</div>
+
+<div class="card">
+<h3>Your Anger 😂</h3>
+<p>
+Even your anger somehow feels cute.
+</p>
+</div>
+
+<div class="card">
+<h3>Your Presence 🌸</h3>
+<p>
+You make ordinary moments feel unforgettable.
+</p>
+</div>
+
+<div class="card">
+<h3>Your Heart 💫</h3>
+<p>
+You deserve every happiness this world can offer.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section>
+
+<h2 class="title">
+The Story Of Pencil ✏️
+</h2>
+
+<div class="timeline">
+
+<div class="container left">
+<div class="content">
+<h3>First Conversation ✨</h3>
+<p>
+A simple conversation became something unforgettable.
+</p>
+</div>
+</div>
+
+<div class="container right">
+<div class="content">
+<h3>Endless Laughs 😂</h3>
+<p>
+From random talks to nonstop laughing moments.
+</p>
+</div>
+</div>
+
+<div class="container left">
+<div class="content">
+<h3>Special Bond 💖</h3>
+<p>
+Some people become important without even realizing it.
+</p>
+</div>
+</div>
+
+<div class="container right">
+<div class="content">
+<h3>26 May 🎂</h3>
+<p>
+The most beautiful day because it's the day Pencil was born ✨
+</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- CAKE -->
+
+<section class="cake-box">
+
+<h2 class="title">
+Blow The Candles 🎂
+</h2>
+
+<div class="cake" onclick="blowCandles()">
+🎂
+</div>
+
+<p id="cakeText" style="margin-top:20px;font-size:1.2rem;">
+Tap the cake ✨
+</p>
+
+</section>
+
+<!-- SECRET -->
+
+<section class="secret">
+
+<h2 class="title">
+Secret Message 🔒
+</h2>
+
+<button onclick="showMessage()">
+Only Pencil Can Open ✏️
+</button>
+
+<div class="hidden-message" id="secretMessage">
+
+Happy Birthday Ishrat ✨<br><br>
+
+26 May became special because it gave this world someone as beautiful as you. 💖<br><br>
+
+I honestly don't know how to perfectly explain how special you are,  
+but I'm really grateful that you exist in my life. ✨<br><br>
+
+You deserve happiness, peace, success, love, and every beautiful thing in this world. 🌸<br><br>
+
+No matter where life takes us,  
+I hope your smile never fades away. 💫<br><br>
+
+Thank you for being YOU, Pencil ✏️
+
+</div>
+
+</section>
+
+<!-- FINAL -->
+
+<section class="final">
+
+<h1>
+Happy Birthday Again, Pencil ✏️
+</h1>
+
+<p>
+May your life always stay filled with happiness, success,
+beautiful memories, endless smiles, and people who truly value you. 💖<br><br>
+
+This little website was made specially for you with lots of care,
+love, and countless good wishes. ✨
+</p>
+
+<div class="creator">
+Created By Ruhullah Hussain With Love 💖
+</div>
+
+</section>
+
+<script>
+
+/* Floating Stars */
+
+const stars=document.getElementById('stars');
+
+for(let i=0;i<80;i++){
+
+let star=document.createElement('span');
+
+star.style.left=Math.random()*100+'vw';
+
+star.style.animationDuration=
+Math.random()*5+5+'s';
+
+star.style.opacity=Math.random();
+
+star.style.top=Math.random()*100+'vh';
+
+stars.appendChild(star);
+
+}
+
+/* Scroll */
+
+function scrollToNext(){
+
+window.scrollTo({
+top:window.innerHeight,
+behavior:'smooth'
+});
+
+}
+
+/* Secret Message */
+
+function showMessage(){
+
+document.getElementById('secretMessage')
+.style.display='block';
+
+createHearts();
+
+}
+
+/* Cake */
+
+function blowCandles(){
+
+document.getElementById('cakeText')
+.innerHTML="Candles blown ✨ Make a wish 💖";
+
+createHearts();
+
+}
+
+/* Hearts */
+
+function createHearts(){
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement('div');
+
+heart.innerHTML='💖';
+
+heart.style.position='fixed';
+heart.style.left=Math.random()*100+'vw';
+heart.style.top='100vh';
+heart.style.fontSize='25px';
+heart.style.zIndex='9999';
+heart.style.animation='rise 4s linear forwards';
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},4000);
+
+}
+
+}
+
+/* Add Animation */
+
+const style=document.createElement('style');
+
+style.innerHTML=`
+@keyframes rise{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+`;
+
+document.head.appendChild(style);
+
+/* Music */
+
+const music=document.getElementById('music');
+
+function toggleMusic(){
+
+if(music.paused){
+music.play();
+}
+else{
+music.pause();
+}
+
+}
+
+/* Countdown */
+
+const birthday = new Date("May 26, 2026 00:00:00").getTime();
+
+setInterval(()=>{
+
+const now = new Date().getTime();
+
+const distance = birthday - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+</script>
+
+</body>
+</html>
